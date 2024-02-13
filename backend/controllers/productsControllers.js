@@ -224,6 +224,11 @@ const newProduct = expressAsyncHandler(async (req, res) => {
   });
 });
 
+const getFilteredProducts = ((req, res, next) => {
+
+  console.log("body------>", req.body)
+})
+
 
 module.exports = {
   getProducts,
@@ -234,5 +239,6 @@ module.exports = {
   createReview,
   getReview,
   deleteReview,
-  getAdminProducts
+  getAdminProducts,
+  getFilteredProducts
 };

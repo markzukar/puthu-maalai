@@ -6,7 +6,8 @@ const {
   newProduct,
   getSingleProduct,
   updateProduct,
-  deleteProduct, createReview, getReview, deleteReview, getAdminProducts
+  deleteProduct, createReview, getReview, deleteReview, getAdminProducts,
+  getFilteredProducts
 } = require("../controllers/productsControllers");
 
 const path = require('path')
@@ -27,6 +28,7 @@ const upload = multer({
 router.get("/products", getProducts);
 router.get("/product/:id", getSingleProduct);
 router.put("/product/:id", updateProduct);
+router.put("/filterProduct", getFilteredProducts);
 
 //reviews
 router.put('/review', isAuthenticateUser, createReview)
